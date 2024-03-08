@@ -11,9 +11,9 @@ import { NgForm } from '@angular/forms';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  public employees: Employee[] | undefined;
-  public editEmployee: Employee | undefined;
-  public deleteEmployee: Employee | undefined;
+  public employees!: Employee[];
+  public editEmployee!: Employee;
+  public deleteEmployee!: Employee;
 
   constructor(private employeeService: EmployeeService) {}
  
@@ -38,17 +38,17 @@ export class AppComponent implements OnInit {
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
-    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-bs-toggle', 'modal');
     if(mode === 'add') {
-      button.setAttribute('data-target', '#addEmployeeModal');
+      button.setAttribute('data-bs-target', '#addEmployeeModal');
     } else if(mode === 'edit') {
       if(employee != null)
       this.editEmployee = employee;
-      button.setAttribute('data-target', '#updateEmployeeModal');
+      button.setAttribute('data-bs-target', '#updateEmployeeModal');
     } else if(mode === 'delete') {
       if(employee != null)
       this.deleteEmployee = employee;
-      button.setAttribute('data-target', '#deleteEmployeeModal');
+      button.setAttribute('data-bs-target', '#deleteEmployeeModal');
     }
     container?.appendChild(button);
     button.click();
