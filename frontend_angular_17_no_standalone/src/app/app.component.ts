@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
       (response: Employee[]) => {
         this.employees = response;
         this.allEmployees = response;
+        this.showAlertNoEmployees();
         // console.log(this.employees);
       },
       (error: HttpErrorResponse) => {
@@ -59,12 +60,13 @@ export class AppComponent implements OnInit {
   public onAddEmloyee(addForm: NgForm): void {
     let button = document.getElementById('add-employee-form');
     if(button != null)
-    button.click
+    button.click();
     this.employeeService.addEmployee(addForm.value).subscribe(
       (response: Employee) => {
         console.log(response);
         this.getEmployees();
         addForm.reset();
+        
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -111,7 +113,20 @@ export class AppComponent implements OnInit {
         }
       }
       this.employees = results;
+      this.showAlertNoEmployees();
    }
 }
+
+  public showAlertNoEmployees(): void {
+    if(this.employees.length > 0) {
+      let alert = document.getElementById('noEmployeesAlert');
+      if(alert)
+      alert.style.display = 'none';
+    } else {
+      let alert = document.getElementById('noEmployeesAlert');
+      if(alert)
+      alert.style.display = 'block';      
+    }
+  }
 }
 
