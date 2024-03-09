@@ -103,10 +103,10 @@ export class AppComponent implements OnInit {
     } else {
       const results: Employee[] = [];
       for(const employee of this.allEmployees) {
-        if(employee.name.toLowerCase().indexOf(key.toLowerCase()) != -1
-        || employee.jobTitle.toLowerCase().indexOf(key.toLowerCase()) != -1
-        || employee.phone.toLowerCase().indexOf(key.toLowerCase()) != -1 
-        || employee.email.toLowerCase().indexOf(key.toLowerCase()) != -1) {
+        if(employee.name.toLowerCase().indexOf(key.trim().toLowerCase()) != -1
+        || employee.jobTitle.toLowerCase().indexOf(key.trim().toLowerCase()) != -1
+        || employee.phone.toLowerCase().indexOf(key.trim().toLowerCase()) != -1 
+        || employee.email.toLowerCase().indexOf(key.trim().toLowerCase()) != -1) {
           results.push(employee);
         }
       }
