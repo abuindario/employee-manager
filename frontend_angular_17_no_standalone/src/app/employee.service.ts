@@ -21,14 +21,14 @@ export class EmployeeService {
     }
 
     public addEmployee(employee: Employee): Observable<Employee> {
-        return this.http.post<Employee>(`${this.apiServerUrl}/new-employe`, employee);
+        return this.http.post<Employee>(`${this.apiServerUrl}/new-employee`, employee);
     }
 
     public updateEmployee(employee: Employee): Observable<Employee> {
-        return this.http.put<Employee>(`${this.apiServerUrl}/update-employe`, employee);
+        return this.http.put<Employee>(`${this.apiServerUrl}/update-employee`, employee);
     }
 
     public deleteEmployee(employeeId: number): Observable<void> {
-        return this.http.delete<void>(`${this.apiServerUrl}/delete-employe/${employeeId}`);
+        return this.http.delete<void>(`${this.apiServerUrl}/delete-employee/${employeeId}`);
     }
 }

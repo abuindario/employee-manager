@@ -14,7 +14,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     FormsModule,
     BrowserModule,
     AppRoutingModule
-  ],
+    ],
   providers: [
     provideClientHydration(),
     provideHttpClient(withFetch())

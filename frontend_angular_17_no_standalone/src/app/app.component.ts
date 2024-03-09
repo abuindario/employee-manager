@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   public employees!: Employee[];
   public editEmployee!: Employee;
   public deleteEmployee!: Employee;
+  public allEmployees!: Employee[];
 
   constructor(private employeeService: EmployeeService) {}
  
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit {
     this.employeeService.getEmployees().subscribe(
       (response: Employee[]) => {
         this.employees = response;
+        this.allEmployees = response;
         // console.log(this.employees);
       },
       (error: HttpErrorResponse) => {
@@ -95,5 +97,21 @@ export class AppComponent implements OnInit {
     );
   }
 
+  public searchEmployees(key: String): void {
+    if (!key) {
+      this.getEmployees();
+    } else {
+      const results: Employee[] = [];
+      for(const employee of this.allEmployees) {
+        if(employee.name.toLowerCase().indexOf(key.trim().toLowerCase()) != -1
+        || employee.jobTitle.toLowerCase().indexOf(key.trim().toLowerCase()) != -1
+        || employee.phone.toLowerCase().indexOf(key.trim().toLowerCase()) != -1 
+        || employee.email.toLowerCase().indexOf(key.trim().toLowerCase()) != -1) {
+          results.push(employee);
+        }
+      }
+      this.employees = results;
+   }
+}
 }
 
