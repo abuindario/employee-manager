@@ -1,0 +1,6 @@
+com\darioabuin\employeemanager\repo\EmployeeRepo.class
+com\darioabuin\employeemanager\exceptions\EmployeeNotFoundException.class
+com\darioabuin\employeemanager\model\Employee.class
+com\darioabuin\employeemanager\EmployeeResource.class
+com\darioabuin\employeemanager\service\EmployeeService.class
+com\darioabuin\employeemanager\EmployeemanagerApplication.class
