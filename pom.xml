@@ -58,9 +58,6 @@
 								</exclude>
 							</excludes>
 						</configuration>
-						<goals>
-							<goal>start</goal>
-						</goals>
 					</execution>
 				</executions>
 			</plugin>
