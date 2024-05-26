@@ -9,6 +9,6 @@
 # COPY --from=build /home/app/target/employeemanager-0.0.1-SNAPSHOT.war /usr/share/app.war 
 # ENTRYPOINT ["java", "-jar", "/usr/share/app.war"]
 
-FROM openjdk:17-alpine
+FROM openjdk:20-alpine
 COPY target/employeemanager-0.0.1-SNAPSHOT.war app.war
-ENTRYPOINT [ "java", "-jar", "/app.war" ]
+ENTRYPOINT [ "java", "-war", "/app.war" ]
