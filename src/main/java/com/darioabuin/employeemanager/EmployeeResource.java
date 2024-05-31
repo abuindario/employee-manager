@@ -19,7 +19,7 @@ import com.darioabuin.employeemanager.service.EmployeeService;
 
 @RestController
 @RequestMapping("/employee-manager")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class EmployeeResource {
 	private final EmployeeService employeeService;
 	

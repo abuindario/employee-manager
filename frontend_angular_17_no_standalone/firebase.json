@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/frontend_angular_17_no_standalone",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
