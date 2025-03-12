@@ -1,4 +1,7 @@
 # Employee Manager
+Project deployed on Render, Firebase & CleverCloud database. <br>
+https://primeraapp-c3a9a.web.app/ 
+ <br> <br>
 Technologies, Frameworks & Tools:
 - Backend:
   - Java 17
